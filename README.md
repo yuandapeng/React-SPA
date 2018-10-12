@@ -1,14 +1,16 @@
 # React-SPA
 webpack4 +babel7 + antd + react + react-router + redux +ie/edge/11/10,使用与中后台项目
 
-# Directory
+- Documentation: https://ant.design/docs/react/introduce-cn
 
+# Directory
+```
 -src
- -assets
- -model
- -pages
- -store
- 
+ -assets  资源目录
+ -model   
+ -pages   页面
+ -store   全局store
+```
 
 
 # Getting Started
