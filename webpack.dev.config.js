@@ -2,7 +2,6 @@ const path = require("path");
 const HtmlPlugin = require('html-webpack-plugin');//html 打包
 const CustomTheme = require("./theme");
 const webpack=require("webpack");
-const WebpackBar = require('webpackbar');
 module.exports = {
     mode: "development",
     entry: {
@@ -94,7 +93,8 @@ module.exports = {
                         loader: "css-loader",
                         options: {
                             importLoaders: 2,
-                            modules: true
+                            modules: true,
+                            localIdentName: '[name]__[local]--[hash:base64:5]'
                         }
                     },
                     {
@@ -137,7 +137,6 @@ module.exports = {
     },
     devtool: 'cheap-eval-source-map',
     plugins: [
-        new WebpackBar({minimal:true}),
         new webpack.HotModuleReplacementPlugin(),
         //配置模板文件
         new HtmlPlugin({
