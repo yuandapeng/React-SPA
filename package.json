@@ -10,7 +10,7 @@
     "start:node": "cross-env NODE_ENV=production supervisor -i client -w server  server/app.js"
   },
   "keywords": ["express","webpack4", "babel7","antd" ,"react" ,"react-router" ,"redux" ,"ie/edge/11/10/9"],
-  "author": "",
+  "author": "yuandapeng",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -55,7 +55,6 @@
     "react": "^16.5.2",
     "react-animated-css": "^1.0.4",
     "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.3.11",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",

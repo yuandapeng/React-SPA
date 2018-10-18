@@ -10,7 +10,7 @@ module.exports = {
             "babel-polyfill" //ie9/10 api
         ],
         //里面的main是可以随便写的
-        main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',"./client/main"]
+        main: ["./client/main"]
     },
     output: {
         path: path.resolve(__dirname, "./public"),
