@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack  --mode production --config=webpack.pro.config.js",
-    "dev": "webpack-dev-server --mode development --open --config=webpack.dev.config.js"
+    "dev": "webpack-dev-server --mode development --open --config=webpack.dev.config.js",
+    "start:node:dev": "cross-env NODE_ENV=development supervisor -i client -w server  server/app.js",
+    "start:node": "cross-env NODE_ENV=production supervisor -i client -w server  server/app.js"
   },
-  "keywords": [],
+  "keywords": ["express","webpack4", "babel7","antd" ,"react" ,"react-router" ,"redux" ,"ie/edge/11/10/9"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -21,6 +23,7 @@
     "babel-plugin-import": "^1.9.1",
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
@@ -33,15 +36,26 @@
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
     "antd": "^3.10.0",
+    "classnames": "^2.2.6",
+    "console-stamp": "^0.2.7",
     "express": "^4.16.4",
+    "import": "0.0.6",
+    "ip": "^1.1.5",
     "moment": "^2.22.2",
+    "opn": "^5.4.0",
     "raf": "^3.4.0",
     "react": "^16.5.2",
+    "react-animated-css": "^1.0.4",
     "react-dom": "^16.5.2",
+    "react-hot-loader": "^4.3.11",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",

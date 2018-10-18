@@ -1,7 +1,13 @@
 # React-SPA
-webpack4 +babel7 + antd + react + react-router + redux +ie/edge/11/10,使用与中后台项目
+express + webpack4 +babel7 + antd + react + react-router + redux +ie/edge/11/10,使用与中后台项目
 
-- Documentation: https://ant.design/docs/react/introduce-cn
+- Express: http://www.expressjs.com.cn/
+- Webpack: https://www.webpackjs.com/
+- Babel  : https://www.babeljs.cn/
+- Antd   : https://ant.design/docs/react/introduce-cn
+- React  : https://react.docschina.org/
+- React-Router : http://react-guide.github.io/react-router-cn/docs/API.html
+- Redux  : http://www.redux.org.cn/
 
 # Directory
 ```

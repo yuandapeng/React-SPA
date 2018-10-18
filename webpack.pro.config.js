@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlPlugin = require('html-webpack-plugin');//html 打包
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");//less 分离
-const CleanWebpackPlugin = require('clean-webpack-plugin');//清理dist
+const CleanWebpackPlugin = require('clean-webpack-plugin');//清理public
 const CustomTheme = require("./theme");
 module.exports = {
     entry: {
@@ -10,14 +10,23 @@ module.exports = {
             "babel-polyfill"
         ],
         //里面的main是可以随便写的
-        main: "./src/main"
+        main: "./client/main"
     },
     output: {
-        path: path.resolve(__dirname, "./dist"),
+        path: path.resolve(__dirname, "./public"),
         filename: "[name].js"
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                include: /node_modules/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    'postcss-loader'
+                ] // 编译顺序从右往左
+            },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
@@ -39,7 +48,7 @@ module.exports = {
                     loader: 'url-loader', //是指定使用的loader和loader的配置参数
                     options: {
                         limit: 10000, // 表示小于50kb的图片转为base64,大于50kb的是路径
-                        outputPath: 'images',  //打包后的图片放到images文件夹下
+                        outputPath: 'assets',  //打包后的图片放到images文件夹下
                     }
                 }]
             },
@@ -118,17 +127,22 @@ module.exports = {
             }
         ]
     },
-    /*  devtool: "cheap-module-eval-source-map",*/
+    optimization: {
+        splitChunks: {
+            name: 'vendor',
+            minChunks: Infinity
+        }
+    },
     plugins: [
         // 打包前先清空
-        new CleanWebpackPlugin('dist'),
+        new CleanWebpackPlugin('public'),
         //配置模板文件
         new HtmlPlugin({
             minify: { //是对html文件进行压缩
                 removeAttributeQuotes: true  //removeAttrubuteQuotes是却掉属性的双引号。
             },
             hash: true, //为了开发中js有缓存效果，所以加入hash，这样可以有效避免缓存JS。
-            template: './src/index.html' //是要打包的html模版路径和文件名称。
+            template: './client/index.html' //是要打包的html模版路径和文件名称。
         }),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
