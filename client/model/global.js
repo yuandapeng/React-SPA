@@ -8,3 +8,6 @@ export default function global(state = {}, action) {
             return state
     }
 }
+
+
+

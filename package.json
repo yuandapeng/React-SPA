@@ -9,19 +9,30 @@
     "start:node:dev": "cross-env NODE_ENV=development supervisor -i client -w server  server/app.js",
     "start:node": "cross-env NODE_ENV=production supervisor -i client -w server  server/app.js"
   },
-  "keywords": ["express","webpack4", "babel7","antd" ,"react" ,"react-router" ,"redux" ,"ie/edge/11/10/9"],
+  "keywords": [
+    "express",
+    "webpack4",
+    "babel7",
+    "antd",
+    "react",
+    "react-router",
+    "redux",
+    "ie/edge/11/10/9"
+  ],
   "author": "yuandapeng",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.1.5",
     "babel-loader": "^8.0.4",
     "babel-plugin-import": "^1.9.1",
     "babel-polyfill": "^6.26.0",
+    "bcryptjs": "^2.4.3",
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
@@ -33,6 +44,8 @@
     "path": "^0.12.7",
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
+    "react-loadable": "^5.5.0",
+    "redux-logger": "^3.0.6",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
@@ -58,6 +71,7 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.2"
   }
 }

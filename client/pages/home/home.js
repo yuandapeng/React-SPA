@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import { Layout, Menu, Icon,Breadcrumb ,Button,Alert} from 'antd';
 import styles from "./index.less";
 import classNames from "classnames";
+import {Link} from "react-router-dom";
 const { Header, Sider, Content } = Layout;
 import "animate.css";
 const {SubMenu}=Menu;
@@ -11,6 +12,7 @@ export  default  class APP extends React.Component {
 
     constructor(props){
         super(props);
+        console.log(props);
 
     }
     state = {
@@ -37,7 +39,7 @@ export  default  class APP extends React.Component {
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                         <Menu.Item key="1">
                             <Icon type="user" />
-                            <span>nav 1</span>
+                            <span>nav 3</span>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <Icon type="video-camera" />
@@ -74,10 +76,11 @@ export  default  class APP extends React.Component {
                         </div>
                         <p></p>
                         <Button onClick={()=>{
-                            this.setState({
-                                isShake:!isShake
-                            })
+                            this.props.dispatch({
+                                type:"logout"
+                            });
                         }}>shake it</Button>
+                        <Link to={"/dashbord"}>dashboard</Link>
                     </Content>
 
 

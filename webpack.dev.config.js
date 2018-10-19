@@ -127,6 +127,7 @@ module.exports = {
                                 ["import", {"libraryName": "antd", "style": true}],//css 样式按需加载
                                 ["@babel/plugin-proposal-decorators", {"legacy": true}],//处理注解
                                 ["@babel/plugin-proposal-class-properties"],//处理类属性
+                                ["@babel/plugin-syntax-dynamic-import"]
                             ]
                         }
                     }
