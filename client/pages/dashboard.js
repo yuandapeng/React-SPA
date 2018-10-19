@@ -76,8 +76,8 @@ export  default  class APP extends React.Component {
                         </div>
                         <p></p>
                         <Button onClick={()=>{
-                            this.props.dispatch({
-                                type:"logout"
+                            this.setState({
+                                isShake:!isShake
                             });
                         }}>shake it</Button>
                         <Link to={"/"}>首页</Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import { Layout, Menu, Icon,Breadcrumb ,Button,Alert} from 'antd';
-import styles from "./index.less";
+import styles from "../index.less";
 import classNames from "classnames";
 import {Link} from "react-router-dom";
 const { Header, Sider, Content } = Layout;
@@ -76,8 +76,8 @@ export  default  class APP extends React.Component {
                         </div>
                         <p></p>
                         <Button onClick={()=>{
-                            this.props.dispatch({
-                                type:"logout"
+                            this.setState({
+                                isShake:!isShake
                             });
                         }}>shake it</Button>
                         <Link to={"/dashboard"}>dashboard</Link>
