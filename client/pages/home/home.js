@@ -80,7 +80,7 @@ export  default  class APP extends React.Component {
                                 type:"logout"
                             });
                         }}>shake it</Button>
-                        <Link to={"/dashbord"}>dashboard</Link>
+                        <Link to={"/dashboard"}>dashboard</Link>
                     </Content>
 
 
