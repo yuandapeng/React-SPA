@@ -17,7 +17,10 @@
     "react",
     "react-router",
     "redux",
-    "ie/edge/11/10/9"
+    "ie/edge/11/10/9",
+    "code-spliting",
+    "hot-replace",
+    "axios"
   ],
   "author": "yuandapeng",
   "license": "ISC",
@@ -32,7 +35,6 @@
     "babel-loader": "^8.0.4",
     "babel-plugin-import": "^1.9.1",
     "babel-polyfill": "^6.26.0",
-    "bcryptjs": "^2.4.3",
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
@@ -46,6 +48,7 @@
     "postcss-loader": "^3.0.0",
     "react-loadable": "^5.5.0",
     "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
@@ -57,6 +60,7 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "antd": "^3.10.0",
+    "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "console-stamp": "^0.2.7",
     "express": "^4.16.4",
@@ -71,7 +75,6 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
-    "redux-saga": "^0.16.2"
+    "redux": "^4.0.0"
   }
 }

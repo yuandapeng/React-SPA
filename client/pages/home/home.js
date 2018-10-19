@@ -4,6 +4,7 @@ import { Layout, Menu, Icon,Breadcrumb ,Button,Alert} from 'antd';
 import styles from "../index.less";
 import classNames from "classnames";
 import {Link} from "react-router-dom";
+import {getWeather} from "../../model/global";
 const { Header, Sider, Content } = Layout;
 import "animate.css";
 const {SubMenu}=Menu;
@@ -12,8 +13,6 @@ export  default  class APP extends React.Component {
 
     constructor(props){
         super(props);
-        console.log(props);
-
     }
     state = {
         collapsed: false,
@@ -28,6 +27,8 @@ export  default  class APP extends React.Component {
 
     render() {
         const  {isShake}=this.state;
+        const  {weatherinfo}=this.props.global;
+        console.log(weatherinfo);
         return (
             <Layout style={{height:"100vh"}}>
                 <Sider
@@ -80,10 +81,12 @@ export  default  class APP extends React.Component {
                                 isShake:!isShake
                             });
                         }}>shake it</Button>
+                        <Button type={"primary"} onClick={()=>{
+                            this.props.dispatch(getWeather());
+                        }}>获取天气</Button>
+                        <p>城市：{weatherinfo.city} 天气：{weatherinfo.WD}</p>
                         <Link to={"/dashboard"}>dashboard</Link>
                     </Content>
-
-
                 </Layout>
             </Layout>
         );
