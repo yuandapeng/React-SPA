@@ -1,17 +1,30 @@
 import axios from "axios";
-export default function global(state = {weatherinfo:{}}, action) {
+export default function global(state = {result:[]}, action) {
     const {payload,type}=action;
     switch (type) {
-        case 'ADD_TODO':
-            const {count}=payload;
-            return {...state,count};
-        case 'ADD_Weather':
-            const {weatherinfo}=payload;
-            return {...state,weatherinfo};
+        case 'SAVE_USER_LIST':
+            return {...state,...payload};
         default:
             return state
     }
 }
+
+export const getBlog =()=>{
+    return (dispatch)=>{
+        axios({
+            method: "get",
+            url: "/getBlob",
+            dataType: "json",
+        }).then((res)=>{
+            dispatch({
+                type:"SAVE_USER_LIST",
+                payload:res.data
+            });
+        })
+    }
+}
+
+
 
 export  function getWeather() {
     return (dispatch) => {
