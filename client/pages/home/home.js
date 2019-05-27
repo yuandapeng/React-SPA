@@ -27,7 +27,7 @@ export  default  class APP extends React.Component {
 
     componentDidMount(){
         const {dispatch}=this.props;
-        dispatch(getBlog());
+        dispatch(getWeather());
     }
 
 

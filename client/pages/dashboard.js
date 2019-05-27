@@ -13,7 +13,6 @@ export  default  class APP extends React.Component {
     constructor(props){
         super(props);
         console.log(props);
-
     }
     state = {
         collapsed: false,

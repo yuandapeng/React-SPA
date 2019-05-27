@@ -7,20 +7,20 @@ import { Switch, Route, BrowserRouter ,Redirect ,HashRouter } from "react-router
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import moment from "moment";
 import "moment/locale/zh-cn";
-import loading from "./pages/components/loading";
-import configureStore from "./pages/store";
+import loading from "@components/loading";
+import configureStore from "./store";
 moment.locale("zh-cn");
 import Loadable from 'react-loadable';
 const App = Loadable({
-    loader: () => import("./pages/home/home"),
+    loader: () => import("@pages/home/home"),
     loading
 });
 const dashboard = Loadable({
-    loader: () => import("./pages/dashboard"),
+    loader: () => import("@pages/dashboard"),
     loading
 });
 const NotFoundPage = Loadable({
-    loader: () => import("./pages/404"),
+    loader: () => import("@pages/404"),
     loading
 });
 

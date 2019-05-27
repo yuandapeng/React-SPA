@@ -4,12 +4,13 @@ module.exports=(app)=>{
     // Step 1: Create & configure a webpack compiler
     var webpack = require('webpack');
 
-    var webpackConfig = require('../webpack.dev.config');
+    var webpackConfig = require('./webpack.dev.config');
     webpackConfig.entry.main.unshift("webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000");
     var compiler = webpack(webpackConfig);
 
     var  devMiddleware = require("webpack-dev-middleware")(compiler, {
-        logLevel: 'warn', publicPath: webpackConfig.output.publicPath
+        // logLevel: 'warn', 
+        publicPath: webpackConfig.output.publicPath
     });
     // Step 2: Attach the dev middleware to the compiler & the server
     app.use(devMiddleware);

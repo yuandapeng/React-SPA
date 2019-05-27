@@ -10,18 +10,19 @@ export default function global(state = {result:[]}, action) {
 }
 
 export const getBlog =()=>{
-    return (dispatch)=>{
-        axios({
+
+    return async (dispatch,getState)=>{
+        const res = await axios({
             method: "get",
             url: "/getBlob",
             dataType: "json",
-        }).then((res)=>{
-            dispatch({
-                type:"SAVE_USER_LIST",
-                payload:res.data
-            });
         })
-    }
+        dispatch({
+            type:"SAVE_USER_LIST",
+            payload:res.data
+        });
+        return res;
+    }  
 }
 
 
