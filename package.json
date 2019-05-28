@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack  --mode production --config=webpack.pro.config.js",
     "dev": "webpack-dev-server --mode development --open --config=webpack.dev.config.js",
-    "start:node:dev": "cross-env NODE_ENV=development  WATCH=true supervisor -i client -w server,webpack.dev.config.js server/app.js",
+    "start:node:dev": "cross-env NODE_ENV=development  supervisor -i client -w server,webpack.dev.config.js server/app.js",
     "start:node": "cross-env NODE_ENV=production supervisor -i client -w server  server/app.js"
   },
   "keywords": [

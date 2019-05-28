@@ -11,7 +11,12 @@ if(process.env.NODE_ENV==="development"){
 }
 
 
+
 require("./controllerMiddle")(app);
+// fix browerRouter f5 
+app.get("*", (_,response)=> {
+    response.sendFile(process.cwd()+'/public/index.html');
+});
 
 //启动服务
 if (require.main === module) {

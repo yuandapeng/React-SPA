@@ -14,7 +14,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "./public"),
-        filename: "[name].js"
+        filename: "[name].js",
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -47,8 +48,8 @@ module.exports = {
                 use: [{
                     loader: 'url-loader', //是指定使用的loader和loader的配置参数
                     options: {
-                        limit: 10000, // 表示小于50kb的图片转为base64,大于50kb的是路径
-                        outputPath: 'assets',  //打包后的图片放到images文件夹下
+                        limit: 10, // 表示小于50kb的图片转为base64,大于50kb的是路径
+                        outputPath: 'images',  //打包后的图片放到images文件夹下
                     }
                 }]
             },
@@ -121,7 +122,7 @@ module.exports = {
                                 ["@babel/plugin-proposal-decorators", { "legacy": true }],//处理注解
                                 ["@babel/plugin-proposal-class-properties"],//处理类属性
                                 ["@babel/plugin-syntax-dynamic-import"],
-                                ['@babel/plugin-transform-async-to-generator'] // 处理 async 
+                                ['@babel/plugin-transform-runtime'] //处理 sync 语法糖
                             ]
                         }
                     }
