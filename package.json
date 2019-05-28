@@ -20,7 +20,9 @@
     "ie/edge/11/10/9",
     "code-spliting",
     "hot-replace",
-    "axios"
+    "axios",
+    "dvajs",
+    "mongodb"
   ],
   "author": "yuandapeng",
   "license": "ISC",
@@ -64,6 +66,7 @@
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "console-stamp": "^0.2.7",
+    "dva": "^2.4.1",
     "express": "^4.16.4",
     "import": "0.0.6",
     "ip": "^1.1.5",

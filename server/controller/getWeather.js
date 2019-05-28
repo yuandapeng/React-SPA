@@ -6,8 +6,22 @@ const  getWeather =(req,response)=>{
             html+=data;
         });
         req.on('end',function(){
-            console.info(html);
-            response.send(html)
+            try {
+                let result = {
+                    code:0,
+                    result:JSON.parse(html)
+                };
+                response.status(200);
+                response.json(result);    
+            } catch (error) {
+                let result = {
+                    code:1,
+                    result:{}
+                };
+                response.status(500);
+                response.json(result);
+            }
+           
         });
     });
 }

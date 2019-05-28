@@ -5,7 +5,7 @@ module.exports=(app)=>{
     var webpack = require('webpack');
 
     var webpackConfig = require('./webpack.dev.config');
-    webpackConfig.entry.main.unshift("webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000");
+    webpackConfig.entry.index.unshift("webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000");
     var compiler = webpack(webpackConfig);
 
     var  devMiddleware = require("webpack-dev-middleware")(compiler, {

@@ -10,7 +10,7 @@ module.exports = {
             "babel-polyfill"
         ],
         //里面的main是可以随便写的
-        main: "./client/main"
+        index: "./client/index" 
     },
     output: {
         path: path.resolve(__dirname, "./public"),
@@ -129,6 +129,16 @@ module.exports = {
                 exclude: /node_modules/
             }
         ]
+    },
+    resolve:{
+        alias: {
+            "@components":path.resolve("client/components"),
+            "@pages":path.resolve("client/pages"),
+            "@utils":path.resolve("client/utils"),
+            "@model":path.resolve("client/model"),
+            "@services":path.resolve("client/services"),
+        },
+        mainFiles:["index"] //默认index.js 为入口文件
     },
     optimization: {
         splitChunks: {

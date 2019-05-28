@@ -1,10 +1,9 @@
 import React from 'react';
-import {connect} from "react-redux";
+import {connect} from "dva";
 import { Layout, Menu, Icon,Breadcrumb ,Button,Alert} from 'antd';
 import styles from "../index.less";
 import classNames from "classnames";
 import {Link} from "react-router-dom";
-import {getWeather,getBlog} from "../../model/global";
 const { Header, Sider, Content } = Layout;
 import "animate.css";
 const {SubMenu}=Menu;
@@ -27,7 +26,9 @@ export  default  class APP extends React.Component {
 
     componentDidMount(){
         const {dispatch}=this.props;
-        dispatch(getWeather());
+        dispatch({
+            type:"global/getWeather"
+        });
     }
 
 

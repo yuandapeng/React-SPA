@@ -15,7 +15,8 @@ express + webpack4 +babel7 + antd + react + react-router + redux +ie/edge/11/10,
  -assets  资源目录
  -model   
  -pages   页面
- -store   全局store
+ -services 
+ -utils 工具  
 ```
 
 
