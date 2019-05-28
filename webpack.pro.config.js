@@ -48,7 +48,7 @@ module.exports = {
                 use: [{
                     loader: 'url-loader', //是指定使用的loader和loader的配置参数
                     options: {
-                        limit: 10, // 表示小于50kb的图片转为base64,大于50kb的是路径
+                        limit: 10000, // 表示小于50kb的图片转为base64,大于50kb的是路径
                         outputPath: 'images',  //打包后的图片放到images文件夹下
                     }
                 }]
