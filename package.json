@@ -4,9 +4,9 @@
   "description": "webpack4 +babel7 + antd + react + react-router + redux +ie/edge/11/10,使用与中后台项目",
   "main": "index.js",
   "scripts": {
-    "build": "webpack  --mode production --config=server/webpack.pro.config.js",
-    "dev": "webpack-dev-server --mode development --open --config=server/webpack.dev.config.js",
-    "start:node:dev": "cross-env NODE_ENV=development supervisor -i client -w server  server/app.js",
+    "build": "webpack  --mode production --config=webpack.pro.config.js",
+    "dev": "webpack-dev-server --mode development --open --config=webpack.dev.config.js",
+    "start:node:dev": "cross-env NODE_ENV=development  WATCH=true supervisor -i client -w server  server/app.js",
     "start:node": "cross-env NODE_ENV=production supervisor -i client -w server  server/app.js"
   },
   "keywords": [
@@ -64,6 +64,7 @@
     "animate.css": "^3.7.0",
     "antd": "^3.10.0",
     "axios": "^0.18.0",
+    "chokidar": "^3.0.0",
     "classnames": "^2.2.6",
     "console-stamp": "^0.2.7",
     "dva": "^2.4.1",

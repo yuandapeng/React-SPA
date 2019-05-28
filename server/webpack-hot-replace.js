@@ -4,7 +4,7 @@ module.exports=(app)=>{
     // Step 1: Create & configure a webpack compiler
     var webpack = require('webpack');
 
-    var webpackConfig = require('./webpack.dev.config');
+    var webpackConfig = require('../webpack.dev.config');
     webpackConfig.entry.index.unshift("webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000");
     var compiler = webpack(webpackConfig);
 
