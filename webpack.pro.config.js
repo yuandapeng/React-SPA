@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlPlugin = require('html-webpack-plugin');//html 打包
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");//less 分离
 const CleanWebpackPlugin = require('clean-webpack-plugin');//清理public
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const CustomTheme = require("./theme");
 module.exports = {
     entry: {
@@ -145,7 +146,20 @@ module.exports = {
         splitChunks: {
             name: 'vendor',
             minChunks: Infinity
-        }
+        },
+        minimizer: [
+            new UglifyJsPlugin({
+              cache: true,
+              parallel: true,
+              sourceMap: false,//关闭source
+              uglifyOptions:{
+                compress: {
+                    drop_debugger: true,//删除debugger
+                    drop_console: true,//删除console
+                  }, 
+              }
+            })
+        ]
     },
     plugins: [
         // 打包前先清空
@@ -162,6 +176,6 @@ module.exports = {
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: "css/[name].[hash:6].css",
-        })
+        }),
     ]
 }

@@ -3,7 +3,7 @@ import {connect} from "dva";
 import { Layout, Menu, Icon,Breadcrumb ,Button,Alert} from 'antd';
 import styles from "../index.less";
 import classNames from "classnames";
-import {Link} from "react-router-dom";
+import { Link } from "dva/router";
 const { Header, Sider, Content } = Layout;
 import "animate.css";
 const {SubMenu}=Menu;
