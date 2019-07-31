@@ -25,7 +25,7 @@ express + webpack4 +babel7 + antd + react + react-router + redux +ie/edge/11/10,
 npm install supervisor -g    //windows
 sudo npm install supervisor -g    //mac
 
-npm install && npm dev
+npm install && npm run dev
 
 
 
