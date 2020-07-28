@@ -1,5 +1,1 @@
-module.exports = {
-    plugins: {
-        'autoprefixer': { browsers: ["last 5 versions", "ie >= 7"] }
-    }
-}
+module.exports = {};
